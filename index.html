@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G検定対策 - 問題演習（MVP）</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>G検定対策 問題演習（MVP）</h1>
+    <p class="disclaimer">
+      本アプリの問題はすべて独自作成であり、実際の試験問題（過去問）ではありません。
+      JDLAおよび試験実施機関とは一切関係ありません。
+    </p>
+  </header>
+
+  <main>
+    <section id="category-screen">
+      <div id="settings-box" class="settings-box">
+        <label for="exam-date-input">試験日（任意）</label>
+        <input type="date" id="exam-date-input">
+        <span id="exam-date-hint" class="hint"></span>
+      </div>
+
+      <button id="due-review-btn" type="button" class="category-btn all-category due-review-btn">
+        <span>今日の復習</span>
+        <span class="count" id="due-count-label">0問</span>
+      </button>
+
+      <h2>分野を選んで練習</h2>
+      <div id="category-list" class="category-list"></div>
+    </section>
+
+    <section id="progress-bar" aria-live="polite" hidden></section>
+
+    <section id="quiz-card" hidden>
+      <p id="syllabus-tag"></p>
+      <h2 id="question-text"></h2>
+      <ul id="choices" class="choices"></ul>
+      <div id="feedback" class="feedback" hidden></div>
+
+      <div id="grade-box" class="grade-box" hidden>
+        <p class="grade-prompt">今の感触はどうでしたか？</p>
+        <div class="grade-buttons">
+          <button type="button" class="grade-btn grade-hard" data-grade="2">難しかった</button>
+          <button type="button" class="grade-btn grade-good" data-grade="3">ちょうどよかった</button>
+          <button type="button" class="grade-btn grade-easy" data-grade="4">簡単だった</button>
+        </div>
+      </div>
+
+      <p id="next-due-info" class="next-due-info" hidden></p>
+      <button id="next-btn" hidden>次の問題へ</button>
+    </section>
+
+    <section id="result-card" hidden>
+      <h2>結果</h2>
+      <p id="result-text"></p>
+      <button id="restart-btn">同じ内容でもう一度</button>
+      <button id="back-to-category-btn">分野選択に戻る</button>
+    </section>
+  </main>
+
+  <script src="categories.js"></script>
+  <script src="questions.js"></script>
+  <script src="fsrs.js"></script>
+  <script src="storage.js"></script>
+  <script src="schedule.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

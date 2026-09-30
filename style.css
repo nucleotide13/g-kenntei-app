@@ -1,0 +1,288 @@
+:root {
+  --bg: #f5f6f8;
+  --card-bg: #ffffff;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --border: #e2e5eb;
+  --accent: #2f6fed;
+  --correct: #1a8a4a;
+  --correct-bg: #e6f6ec;
+  --incorrect: #c62839;
+  --incorrect-bg: #fbe9ea;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.app-header {
+  padding: 20px 16px 12px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.app-header h1 {
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+#progress-bar {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 8px 0;
+}
+
+.settings-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card-bg);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.settings-box input[type="date"] {
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.settings-box .hint {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.due-review-btn {
+  margin-bottom: 4px;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.category-group-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 12px 0 2px;
+}
+
+.category-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card-bg);
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.category-btn:hover {
+  border-color: var(--accent);
+}
+
+.category-btn.all-category {
+  border-color: var(--accent);
+  background: #eef3fe;
+  font-weight: bold;
+}
+
+.category-btn .count {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.category-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#quiz-card, #result-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 8px;
+}
+
+#syllabus-tag {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+#question-text {
+  font-size: 1.05rem;
+  margin: 0 0 16px;
+}
+
+.choices {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.choice-btn {
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fafbfc;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.choice-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.choice-btn:disabled {
+  cursor: default;
+}
+
+.choice-btn.selected-correct {
+  border-color: var(--correct);
+  background: var(--correct-bg);
+}
+
+.choice-btn.selected-incorrect {
+  border-color: var(--incorrect);
+  background: var(--incorrect-bg);
+}
+
+.choice-btn.reveal-correct {
+  border-color: var(--correct);
+  background: var(--correct-bg);
+}
+
+.feedback {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.feedback.correct {
+  background: var(--correct-bg);
+  color: var(--correct);
+}
+
+.feedback.incorrect {
+  background: var(--incorrect-bg);
+  color: var(--incorrect);
+}
+
+.feedback .explanation {
+  color: var(--text);
+  margin-top: 8px;
+}
+
+.feedback .sources {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.grade-box {
+  margin-top: 16px;
+}
+
+.grade-prompt {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.grade-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.grade-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: #fafbfc;
+  color: var(--text);
+}
+
+.grade-btn.grade-hard { border-color: #c67c00; }
+.grade-btn.grade-good { border-color: var(--accent); }
+.grade-btn.grade-easy { border-color: var(--correct); }
+
+.grade-btn:hover {
+  filter: brightness(0.97);
+}
+
+.next-due-info {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.next-due-info.error {
+  color: var(--incorrect);
+  font-weight: bold;
+}
+
+#next-btn, #restart-btn, #back-to-category-btn {
+  margin-top: 16px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+#back-to-category-btn {
+  background: #fafbfc;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+#result-text {
+  font-size: 1.1rem;
+}
